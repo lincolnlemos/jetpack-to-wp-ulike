@@ -22,6 +22,7 @@
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       jetpack-to-wp-ulike
+ * GitHub Plugin URI: https://github.com/lincolnlemos/jetpack-to-wp-ulike
  * Domain Path:       /languages
  */
 
