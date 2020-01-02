@@ -207,7 +207,7 @@ if ( ! defined( 'WPINC' ) ) die;
                   );  
                 } else {
                   echo '<p>None user registered with login '. $like->login .'</p>';
-                  die();
+                  // die();
                 }
                                 
 
