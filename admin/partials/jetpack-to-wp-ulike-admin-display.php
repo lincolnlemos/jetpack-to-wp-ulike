@@ -43,7 +43,7 @@ function get_post_by_name( $post_name, $post_type = 'post' )
 {
     $post_ids = get_posts(array
     (
-        'post_name'   => $post_name,
+        'name'   => $post_name,
         'post_type'   => $post_type,
         'numberposts' => 1,
     ));
