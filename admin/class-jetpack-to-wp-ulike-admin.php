@@ -100,4 +100,45 @@ class Jetpack_To_Wp_Ulike_Admin {
 
 	}
 
+	/**
+	 * Register the administration menu for this plugin into the WordPress Dashboard menu.
+	 *
+	 * @since    1.0.1
+	 */
+	public function add_plugin_admin_menu() {		
+		
+		add_submenu_page( 'tools.php', 'Plugin settings page title', 'Jetpack to WP ULike', 'manage_options', $this->plugin_name, array($this, 'display_plugin_setup_page'));
+		
+	}
+	
+	/**
+	 * Render the settings page for this plugin.
+	 *
+	 * @since    1.0.1
+	 */
+	public function display_plugin_setup_page() {
+		include_once( 'partials/' . $this->plugin_name . '-admin-display.php' );
+	}
+
+	/**
+	 * Save the options at database
+	 *
+	 * @since		1.0.1
+	 */
+	public function options_update() {
+    register_setting( $this->plugin_name, $this->plugin_name);
+	}
+
+	 /**
+	 * Add settings action link to the plugins page.
+	 *
+	 * @since    1.0.1
+	 */
+	public function add_action_links( $links ) {		
+		$settings_link = array(
+			'<a href="' . admin_url( 'tools.php?page=' . $this->plugin_name ) . '">' . __( 'Settings', $this->plugin_name ) . '</a>',
+		);
+		return array_merge(  $settings_link, $links );
+	}
+
 }
